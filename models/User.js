@@ -1,23 +1,24 @@
-// const mongoose = require("mongoose");
-// // mongoose.set("useCreateIndex", true);
-// // const Schema = mongoose.Schema;
-// // const ObjectId = mongoose.Types.ObjectId;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-// const UserSchema = new Schema(
-//   {
-//     name: {
-//       type: String,
-//       required: true,
-//       unique: true,
-//     },
-//     password: {
-//       type: String,
-//       required: true,
-//     },
-//   },
-//   { timestamps: true }
-// );
+// mongoose.set("useCreateIndex", true);
+// const ObjectId = mongoose.Types.ObjectId;
 
-// const User = mongoose.model("User", UserSchema);
+const userSchema = new Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
 
-// module.exports = User;
+const User = mongoose.model("User", userSchema);
+
+module.exports = User;
