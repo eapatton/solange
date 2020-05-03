@@ -1,0 +1,14 @@
+body {
+    background-image: url("concert.jpg");
+    background-color: #353f52;
+    color: aquamarine;
+}
+
+* {
+    color: blueviolet;
+}
+
+.navbar-brand {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: aquamarine;
+}
