@@ -63,7 +63,7 @@ const moods = [
 ];
 
 const userTest = {
-  name: "Solange",
+  username: "Solange",
   password: "1234",
 };
 
