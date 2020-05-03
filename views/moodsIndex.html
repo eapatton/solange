@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<!-- Main CSS -->
+ 	<link rel="stylesheet" href="/styles/main.css">
+
+  	<!-- Main JS -->
+  	<script defer src="/scripts/main.js"></script>
+
+	<title>Solange</title>
+</head>
+<body>
+  <header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark pt-3 pb-3">
+      <div class="container">
+        <a class="navbar-brand" href="/">Lmonade</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        		<div class="collapse navbar-collapse" id="navbarCollapse">
+          			<ul class="navbar-nav ml-auto">
+						<form class="form-inline md-form ml-auto mb-1">
+	           	 			<li class="nav-item">
+	              				<a class="nav-link btn" data-toggle="modal" data-target="#signUpModal">Register</a>
+							</li>
+	            			<li class="nav-item">
+	              				<a class="nav-link btn" data-toggle="modal" data-target="#loginModal">Login</a>
+							</li>
+            <li class="nav-item">
+              <a class="nav-link" href="/moods">Moodz</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">Profile</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+        				</form>
+          			</ul>
+        		</div>
+      		</div>
+    	</nav>
+  	</header>
+  	<!-- Main -->
+  	<main class="mb-5">
+    <!-- Moods Section -->
+    	<section class="container">
+      		<div id="moods" class="row"></div>
+		</section>
+
+    <!-- Modal for sign up -->
+      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header p-3">
+            <h5 class="modal-title" id="signUpModalLabel">Register</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body p-3">
+            <form action="/profile" method="get" id="signupForm">
+
+			  <div class="form-group">
+                <label for="userNameInput">Username</label>
+                <input type="username" class="form-control" id="UsernameInputS" aria-describedby="usernameHelp" placeholder="Enter Username" name="username" required>
+                <small id="userNameHelp" class="form-text text-muted">Your username must be unique.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="passwordInput">Password</label>
+                <input type="password" class="form-control" id="passwordInputS" aria-describedby="passwordHelp" placeholder="Enter password" name="password">
+              </div>
+
+        
+
+              <button type="submit" class="btn btn-outline-light float-right" id="signupButton">Register</button>
+            </form>
+          </div>
+          <div class="modal-footer p-3 text-muted">
+            Already registered? <a class="link btn" data-toggle="modal" data-target="#loginModal" id="switchToLogin"><u>go to login</u></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+		<!-- Modal for login -->
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header p-3">
+						<h5 class="modal-title" id="loginModalLabel">Log in</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body p-3">
+						<form action="/profile" method="get" id="loginForm">
+							<div class="form-group">
+							  <label for="usernameInputL">Username</label>
+							  <input type="username" class="form-control" id="usernameInputL" aria-describedby="usernameHelp" placeholder="Enter username" name="username">
+							  <small id="usernameHelp" class="form-text text-muted">Your username must be unique.</small>
+							</div>
+
+              <div class="form-group">
+                <label for="passwordInput">Password</label>
+                <input type="password" class="form-control" id="passwordInputS" aria-describedby="passwordHelp" placeholder="Enter password" name="password">
+              </div>
+							<button type="submit" class="btn btn-outline-light float-right" id="loginButton">Login</button>
+						</form>
+					</div>
+					<div class="modal-footer p-3 text-muted">
+						Or create a <a class="link btn" data-toggle="modal" data-target="#signUpModal" id="switchToSignUp"><u>new account</u></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+  <!-- Main -->
+  <main>
+    <!-- Jumbotron -->
+    <section class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">What Beyonce are you today?</h1>
+        <p class="lead">Tantalizingly non-descript sub-headline.</p>
+      </div>
+    </section>
+  </main>
+
+ <!-- Footer -->
+  <footer class="bg-dark text-center text-light pt-4 pb-4">
+    <p class="mb-0">Four Inc.</p>
+  </footer>
+
+
+	<!-- AJAX JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
+	
+	<!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+</body>
+
+
+</html>
