@@ -18,7 +18,9 @@ The final objective is to build an app where users can pick a Beyonce mood and m
   - MongoDB,
   - Mongoose,
   - Express,
-  - Body-parser
+  - Body-parser,
+  - Bcrypt
+  - Express-session
 - Bootstrap
 - HTML
 - CSS
@@ -157,3 +159,7 @@ The login modal
 - Heroku
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
 - https://gist.github.com/uupaa/f77d2bcf4dc7a294d109
+
+---
+
+[back to the top](# Beyonce Mooodz)
