@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
+const Post = require("./post");
 // mongoose.set("useCreateIndex", true);
 // const ObjectId = mongoose.Types.ObjectId;
 
@@ -10,11 +10,13 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
+      // sparse: true,
     },
     password: {
       type: String,
       required: true,
     },
+    posts: [Post.schema],
   },
   { timestamps: true }
 );
