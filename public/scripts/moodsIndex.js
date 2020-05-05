@@ -22,7 +22,7 @@ function getMoodTemplate(mood) {
               ${mood.title}
             </h5>
             <p class="card-text">${mood.description}</p>
-            <a href="/moods/${mood._id}" class="btn btn-outline-light float-right">Upgrade U</a>
+            <a href="/moods/${mood._id}" class="btn btn-light float-right">Upgrade U</a>
           </div>
         </div>
       </div>
