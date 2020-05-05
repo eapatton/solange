@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
+const morgan = require("morgan");
 //const cookieParser = require("cookie-parser");
 
 const app = express();
@@ -15,10 +16,11 @@ const db = require("./models");
 const routes = require("./routes");
 
 // ---------------------- MIDDLEWARE --------------------------- //
-app.use(express.static(`$(__dirname}/public`));
+app.use(express.static(`${__dirname}/public`));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(morgan("tiny"));
 //app.use(cookieParser());
 
 app.use(
