@@ -7,8 +7,8 @@ btnLogin.addEventListener("click", handleLoginSubmit);
 // Handle Submit
 function handleLoginSubmit(event) {
   event.preventDefault();
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("psw").value;
+  const username = document.getElementById("userNameInputS").value;
+  const password = document.getElementById("passwordInputS").value;
 
   const userData = {
     username,
@@ -28,7 +28,7 @@ function handleLoginSubmit(event) {
     .then((stream) => stream.json())
     .then((res) => {
       if (res.status === 200) {
-        window.location = "/";
+        window.location = "/profile";
       } else {
         console.log(res);
       }

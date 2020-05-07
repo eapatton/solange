@@ -1,5 +1,5 @@
 const API_BASE = "/api/v1";
-const moodPosts = document.getElementById("moodPosts");
+const moodPosts = document.getElementById("moodInfo");
 const moodId = window.location.pathname.split("/")[2];
 const addButton = document.getElementById("addBtn");
 
@@ -20,10 +20,8 @@ function render(moodsObject) {
 
 function getPostsTemplate(post) {
   return `
-        <div class="col-md-4 mb-4">
-
-
-        <div id="${post._id}" class="card  shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="col-md-4 mb-4 p-4">
+        <div id="${post._id}" class="card  shadow-lg p-3 mb-5 rounded">
           <img src="${post.image}" class="card-img-top" alt="${post.title}" />
           <div class="card-body">
             <h5 class="card-title">
@@ -31,8 +29,8 @@ function getPostsTemplate(post) {
             </h5>
             <p class="card-text">${post.content}</p>
             <p class="card-text">${post.link}</p>
-            <a href="/moods/${moodId}/posts/${post._id}" class="btn btn-sm btn-outline-dark float-right">Edit</a>
-            <button onclick="deletePost(event)" id="deleteBtn" class="btn btn-sm btn-outline-danger delete-post float-right mr-2" type="button">Delete</button>
+            <a href="/moods/${moodId}/posts/${post._id}" class="btn btn-sm btn-dark float-right">Edit</a>
+            <button onclick="deletePost(event)" id="deleteBtn" class="btn btn-sm btn-outline-light delete-post float-right mr-2" type="button">Delete</button>
           </div>
         </div>
       </div>
@@ -61,6 +59,22 @@ addButton.addEventListener(
 
   (event) => {
     console.log("clicked");
-    window.location = `/moods/${moodId}/add`;
+    window.location = `/${moodId}/add`;
   }
 );
+
+// switch between modal
+$(document).on("click", "#switchToLogin", function () {
+  $("#signUpModal").modal("hide");
+  $("#loginModal").modal("show");
+});
+
+$(document).on("click", "#switchToSignUp", function () {
+  $("#loginModal").modal("hide");
+  $("#signUpModal").modal("show");
+});
+
+$(document).on("click", "#switchToLogin", function () {
+  $("#signUpModal").modal("hide");
+  $("#loginModal").modal("show");
+});

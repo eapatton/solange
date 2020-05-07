@@ -25,22 +25,22 @@ router.get("/moods", (req, res) => {
 
 //Mood show page
 router.get("/moods/:moodId", (req, res) => {
-  res.sendFile("views/moodInfo.html", {
+  res.sendFile("/views/moodInfo.html", {
     root: __dirname + "/../",
   });
 });
 
 //---------------------------  POST ---------------------  //
 //new post page view
-router.get("/moods/:moodId/posts/new", (req, res) => {
-  res.sendFile("views/postNew.html", {
+router.get("/moods/:moodId/add", (req, res) => {
+  res.sendFile("/views/postNew.html", {
     root: __dirname + "/../",
   });
 });
 
 //edit post view
-router.get("/moods/:moodId/posts/:postId/edit", (req, res) => {
-  res.sendFile("views/postEdit.html", {
+router.get("/moods/:moodId/posts/:postId", (req, res) => {
+  res.sendFile("/views/postEdit.html", {
     root: __dirname + "/../",
   });
 });
@@ -48,25 +48,25 @@ router.get("/moods/:moodId/posts/:postId/edit", (req, res) => {
 //// ------------------ AUTH
 
 //register page view
-router.get("register", (req, res) => {
-  res.sendFile("views/register.html", {
+router.get("/register", (req, res) => {
+  res.sendFile("/views/register.html", {
     root: __dirname + "/../",
   });
 });
 
-router.get("login", (req, res) => {
-  res.sendFile("views/login.html", {
+router.get("/login", (req, res) => {
+  res.sendFile("/views/login.html", {
     root: __dirname + "/../",
   });
 });
 
-router.get("profile", (req, res) => {
+router.get("/profile", (req, res) => {
   if (!req.session.currentUser) {
     // Unauthorized, Redirect to Login Page
     return res.redirect("/login");
   }
 
-  res.sendFile("views/profile.html", {
+  res.sendFile("/views/profile.html", {
     root: __dirname + "/../",
   });
 });

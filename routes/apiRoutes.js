@@ -41,7 +41,19 @@ router.delete("/logout", ctrl.authCtrl.logout);
 //check user login
 router.get("/verify", ctrl.authCtrl.verify);
 
-//find user
-router.get("/profile", ctrl.authCtrl.findUser);
+//find all profiles
+// router.get("/profiles", ctrl.profilesCtrl.index);
+
+// create new user profile at url/api/v1/profiles
+router.post("/profiles", ctrl.profilesCtrl.create);
+
+// get user profile at url/api/v1/profile/id
+router.get("/profile/:id", ctrl.profilesCtrl.show);
+
+// update user profile at url/api/v1/profile/id
+router.put("/profile/:id", ctrl.profilesCtrl.update);
+
+// delete user profile at url/api/v1/profile/id
+router.delete("/profile/:id", ctrl.profilesCtrl.remove);
 
 module.exports = router;
