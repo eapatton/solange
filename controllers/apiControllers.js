@@ -168,7 +168,7 @@ const deletePost = (req, res) => {
           });
         }
 
-        res.json(deletedPost);
+        res.json(savedMood);
       });
     });
   });
