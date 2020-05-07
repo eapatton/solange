@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const DB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/solange";
+const DB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/solange1";
 
 mongoose
   .connect(DB_URI, {
@@ -15,5 +15,7 @@ mongoose
 module.exports = {
   Mood: require("./mood"),
   Post: require("./post"),
-  User: require("./User"),
+  User: require("./user"),
 };
+
+mongoose.set("debug", true);
