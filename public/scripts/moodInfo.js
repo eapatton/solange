@@ -59,7 +59,7 @@ addButton.addEventListener(
 
   (event) => {
     console.log("clicked");
-    window.location = `/${moodId}/add`;
+    window.location = `/moods/${moodId}/add`;
   }
 );
 
