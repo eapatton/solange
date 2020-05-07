@@ -4,61 +4,52 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- STYLESHEETS -->
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/styles/main.css" />
+  
 
-	<!-- Main CSS -->
- 	<link rel="stylesheet" href="/styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100&display=swap" rel="stylesheet">
+    <!-- VENDOR SCRIPTS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
-  	<!-- Main JS -->
-  	<script defer src="/scripts/main.js"></script>
+    <!-- APPLICATION SCRIPTS -->
+    
+    <script defer src="/scripts/main.js"></script>
+  
 
 	<title>Solange</title>
 </head>
 <body>
-  <header>
 
 
-
-
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">Lmonade</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Moods
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/moods">Every Mood</a>
-          <a class="dropdown-item" href="#">Flaws and All</a>
-          <a class="dropdown-item" href="#">Naughty Girls</a>
-          <a class="dropdown-item" href="#">Diva</a>
-          <a class="dropdown-item" href="#">XO</a>
-          <a class="dropdown-item" href="#">Flawless</a>
-          <a class="dropdown-item" href="#">Queen Bey</a>
+<header>
+        <div class="navbar-header">
+            <div class="toggle-button" id="toggle">
+                <span class="bar top"></span>
+                <span class="bar middle"></span>
+                <span class="bar bottom"></span>
+            </div>
         </div>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/profile">Profile</a>
-      </li>
-      <li class="nav-item">
-	      <a class="nav-link btn" data-toggle="modal" data-target="#signUpModal">Register</a>
-			</li>
-	    <li class="nav-item">
-	    	<a class="nav-link btn" data-toggle="modal" data-target="#loginModal">Login</a>
-			</li>
- 
-    </ul>
-  </div>
+        <nav class="overlay" id="overlay">
+  <ul>
+    <li><a href="/">home</a></li>
+    <li><a href="/moods">the mood</a></li>
+    <li><a href="/about">about</a></li>
+    <li><a data-toggle="modal" data-target="#loginModal">login</a></li>
+	  <li><a data-toggle="modal" data-target="#signUpModal">register</a></li>
+  </ul>
 </nav>
+</header>
+ 
+
 
     <!-- Modal for sign up -->
       <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
@@ -71,22 +62,19 @@
             </button>
           </div>
           <div class="modal-body p-3">
-            <form action="/profile" method="get" id="signupForm">
+            <form ction="/profile" method="post" id="signupForm">
 
 			  <div class="form-group">
-                <label for="userNameInput">Username</label>
-                <input type="username" class="form-control" id="UsernameInputS" aria-describedby="usernameHelp" placeholder="Enter Username" name="username" required>
-                <small id="userNameHelp" class="form-text text-muted">Your username must be unique.</small>
+                <label for="username">Username</label>
+                <input type="username" class="form-control" id="username" aria-describedby="username" placeholder="Enter Username" name="username" required>
+                <small id="username" class="form-text text-muted">Your username must be unique.</small>
               </div>
 
               <div class="form-group">
-                <label for="passwordInput">Password</label>
-                <input type="password" class="form-control" id="passwordInputS" aria-describedby="passwordHelp" placeholder="Enter password" name="password">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" aria-describedby="password" placeholder="Enter password" name="password">
               </div>
-
-        
-
-              <button type="submit" class="btn btn-light float-right" id="signupButton">Register</button>
+              <button type="submit" class="btn  float-right" id="signupButton">Register</button>
             </form>
           </div>
           <div class="modal-footer p-3 text-muted">
@@ -107,11 +95,11 @@
 						</button>
 					</div>
 					<div class="modal-body p-3">
-						<form action="/profile" method="get" id="loginForm">
+						<form action="/profile" method="post" id="loginForm">
 							<div class="form-group">
-							  <label for="usernameInputL">Username</label>
-							  <input type="username" class="form-control" id="usernameInputL" aria-describedby="usernameHelp" placeholder="Enter username" name="username">
-							  <small id="usernameHelp" class="form-text text-muted">Your username must be unique.</small>
+							  <label for="username">Username</label>
+							  <input type="username" class="form-control" id="username" aria-describedby="username" placeholder="Enter username" name="username">
+							  <small id="username" class="form-text text-muted">Your username must be unique.</small>
 							</div>
 
               <div class="form-group">
@@ -127,6 +115,7 @@
 				</div>
 			</div>
 		</div>
+
 
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
@@ -153,46 +142,37 @@
   </a>
 </div>
 
+
+
+
+
 <!-- Footer -->
-<footer class="page-footer font-small mdb-color darken-3 pt-4 fixed">
+<div id="footer">
 
-  <!-- Footer Elements -->
-  <div class="container">
-
-    <!--Grid row-->
-    <div class="row d-flex justify-content-center">
-
-      <!--Grid column-->
-      <div class="col-md-6">
-
-        <!-- Video -->
-        <div class="embed-responsive embed-responsive-16by9 mb-4">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM"
-            allowfullscreen></iframe>
-        </div>
-
+<div class="grid-container">
+  <div class="left-column">
+        <div class="footer-social">
+        <div id="social-networks"> 
+        <a class="Footer__IconLink-sc-1b62jcq-14 cOWKWE" href="https://twitter.com/beyonce?lang=en" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" size="30" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></a>
+        <a class="Footer__IconLink-sc-1b62jcq-14 cOWKWE" href="https://www.facebook.com/beyonce/" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" size="30" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg></a>
+        <a class="Footer__IconLink-sc-1b62jcq-14 cOWKWE" href="https://www.instagram.com/beyonce/?hl=en" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" size="30" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></a>
+        <a class="Footer__IconLink-sc-1b62jcq-14 cOWKWE" href="https://www.youtube.com/beyonce" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" size="30" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></a>
+        <a class="beyonceweb" href="https://beyonce.com/"> Beyonce.com</a>
       </div>
-      <!--Grid column-->
-
     </div>
-    <!--Grid row-->
+</div>
+
+    
+    </div>
 
   </div>
-  <!-- Footer Elements -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://beyonce.com/"> Beyonce.com</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
 <!-- Footer -->
+
 
 
 	<!-- AJAX JS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
-	
+	<script src="/scripts/overlay.js"></script>
 	<!-- Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
