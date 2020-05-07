@@ -26,7 +26,7 @@ document.addEventListener("submit", (event) => {
   console.log("submit", newPost);
 
   // REDIRECT TO MOOD PAGE
-  fetch(`${API_BASE}/moods/${moodId}`, {
+  fetch(`${API_BASE}/moods/${moodId}/posts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
