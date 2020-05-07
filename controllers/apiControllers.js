@@ -63,6 +63,7 @@ const findPost = (req, res) => {
 };
 
 const createPost = (req, res) => {
+  console.log("------------------------------------------------", req);
   db.Post.create(req.body, (err, newPost) => {
     if (err) {
       return res.status(500).json({ status: 500, error: "database error!" });
@@ -84,7 +85,7 @@ const createPost = (req, res) => {
             .json({ status: 400, error: "Unable to save Mood." });
         }
 
-        return res.status(201).json({ status: 201, message: "Post saved!" });
+        return res.json(newPost);
       });
     });
   });

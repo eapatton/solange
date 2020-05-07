@@ -40,13 +40,20 @@ const register = (req, res) => {
 
         // Create New user
         db.User.create(userData, (err, newUser) => {
-          if (err) console.log(err);
-          return res.status(400).json({
-            status: 400,
-            message: "create issue",
-          });
-
-          res.status(201).json({ status: 201, message: "Success" });
+          if (err) {
+            console.log(err);
+            return res.status(400).json({
+              status: 400,
+              message: "create issue",
+            });
+          }
+          req.session.currentUser = {
+            _id: newUser._id,
+            username: newUser.username,
+          };
+          res
+            .status(201)
+            .json({ status: 201, message: "Success", userId: newUser._id });
         });
       });
     });
@@ -55,7 +62,9 @@ const register = (req, res) => {
 
 const login = (req, res) => {
   res.status(200);
+
   db.User.findOne({ username: req.body.username }, (err, foundUser) => {
+    console.log("logging in:", req.body);
     if (err)
       return res
         .status(400)
@@ -78,7 +87,6 @@ const login = (req, res) => {
         req.session.currentUser = {
           _id: foundUser._id,
           username: foundUser.username,
-          // password: foundUser.password,
         };
         res.status(200).json({
           status: 200,
