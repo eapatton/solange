@@ -7,8 +7,43 @@ body {
   color: #eeeae4;
 }
 
+.h1-mood-title {
+  text-align: center;
+  color: #d1bfa7;
+  font-family: "Rock Salt", cursive;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+/* #addBtn {
+  margin: 10px;
+} */
+
+
+.description {
+  max-height: max-content;
+}
+
+.new-post-title {
+  text-align: right;
+  color: #c3907b;
+  font-family: "Rock Salt", cursive;
+  padding-top: 70px;
+}
+
+.edit-post-title {
+  text-align: right;
+  color: #c3907b;
+  font-family: "Rock Salt", cursive;
+  padding-top: 70px;
+}
+
 .btn-upgrade {
   background-color: #c3907b;
+}
+
+.addBtn {
+  position: ;
 }
 
 .btn {
@@ -76,8 +111,8 @@ body {
   left: 15px;
   padding: 9px 10px;
   margin: 8px 15px 8px 0;
-  height: 20px;
-  width: 35px;
+  height: 30px;
+  width: 45px;
   cursor: pointer;
   z-index: 4;
 }

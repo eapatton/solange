@@ -4,6 +4,10 @@
   font-family: "Montserrat Alternates", sans-serif;
 }
 
+.d-block {
+  max-height: 600px;
+}
+
 .modal-content {
   background-color: #bd8c7d;
 }
@@ -25,14 +29,22 @@
   font-weight: bolder;
 }
 
+.card-img-top {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
 .toggle-button {
   position: fixed;
   top: 8px;
   left: 15px;
   padding: 9px 10px;
   margin: 8px 15px 8px 0;
-  height: 20px;
-  width: 35px;
+  height: 30px;
+  width: 45px;
   cursor: pointer;
   z-index: 4;
 }
