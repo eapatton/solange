@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
-const DB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/solange1";
+const DB_URI =
+  process.env.MONGODB_URI || "mongodb://localhost:27017/solange711";
 
 mongoose
   .connect(DB_URI, {
