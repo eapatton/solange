@@ -13,9 +13,9 @@ mongoose
   .catch((err) => console.log(`MongoDB error: ${err}`));
 
 module.exports = {
-  Mood: require("./mood"),
-  Post: require("./post"),
-  User: require("./user"),
+  Mood: require("./Mood"),
+  Post: require("./Post"),
+  User: require("./User"),
 };
 
 mongoose.set("debug", true);
