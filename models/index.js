@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const DB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/solange1";
 
 mongoose
-  .connect(process.env.MONGODB_URI, {
+  .connect(DB_URI, {
     useNewUrlParser: true,
     useFindAndModify: false,
     useCreateIndex: true,
