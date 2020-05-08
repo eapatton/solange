@@ -1,4 +1,4 @@
-const API_BASE = "/api/v1";
+// const API_BASE = "/api/v1";
 const moodPosts = document.getElementById("moodInfo");
 const moodId = window.location.pathname.split("/")[2];
 const addButton = document.getElementById("addBtn");
