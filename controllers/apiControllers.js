@@ -26,20 +26,6 @@ const findOne = (req, res) => {
   });
 };
 
-// const keywordSearch = (req, res) => {
-//   db.Mood.find({ title: req.params.keywords }, (err, currentMood) => {
-//     if (err) {
-//       console.log(err);
-//       process.exit();
-//     }
-
-//     if (currentMood.length < 1) {
-//       res.status(400).json({ message: "That's not the mood!" });
-//     }
-//     res.json(currentMood);
-//   });
-// };
-
 const findPost = (req, res) => {
   db.Mood.findById(req.params.moodId, (err, foundMood) => {
     if (err) {
