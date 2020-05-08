@@ -4,7 +4,9 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const morgan = require("morgan");
-//const cookieParser = require("cookie-parser");
+const cookieParser = require("cookie-parser");
+const expressValidator = require("express-validator");
+const passport = require("passport-local");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -21,7 +23,8 @@ app.use(express.static(`${__dirname}/public`));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("tiny"));
-//app.use(cookieParser());
+// app.use(expressValidator());
+app.use(cookieParser());
 
 app.use(
   session({
@@ -38,6 +41,23 @@ app.use(
     },
   })
 );
+
+// passport.use(
+//   new LocalStrategy(function (username, password, done) {
+//     User.findOne({ username: username }, function (err, user) {
+//       if (err) {
+//         return done(err);
+//       }
+//       if (!user) {
+//         return done(null, false);
+//       }
+//       if (!user.verifyPassword(password)) {
+//         return done(null, false);
+//       }
+//       return done(null, user);
+//     });
+//   })
+// );
 
 // ---------------------- HTML ROUTES ------------------------------- //
 app.use("/", routes.views);
