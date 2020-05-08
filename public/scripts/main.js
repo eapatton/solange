@@ -71,6 +71,54 @@ signupForm.addEventListener("submit", (event) => {
     .catch((err) => console.log(err));
 });
 
+fetch("/api/v1/verify", {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+    credentials: "include",
+  },
+})
+  .then((stream) => stream.json())
+  .then((res) => getSession(res))
+  .catch((err) => console.log(err));
+
+function getSession(session) {
+  if (session.status === 200) {
+    console.log(session.currentUser);
+    console.log(session.currentUser.username);
+    console.log(session.currentUser._id);
+    $("#login").empty();
+    $("#login").html(
+      `Hi ${session.currentUser.username} &nbsp <button id="logoutbutton" class="btn btn-light btn-light" type="submit">Logout</button>`
+    );
+  } else {
+    currentUser = null;
+  }
+  updateMenu();
+  // const btn = document.getElementById("logoutBtn");
+  // btn.addEventListener("click", handleLogoutSubmit);
+}
+
+function handleLogoutSubmit(event) {
+  event.preventDefault();
+  fetch("/api/v1/logout", {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      credentials: "include",
+    },
+  })
+    .then((stream) => stream.json())
+    .then((res) => {
+      if (res.status === 200) {
+        window.location = "/";
+      } else {
+        console.log(res);
+      }
+    })
+    .catch((err) => console.log(err));
+}
+
 // switch between modal
 $(document).on("click", "#switchToLogin", function () {
   $("#signUpModal").modal("hide");
