@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
-const Post = require("./post");
+const Post = require("./Post");
 Schema = mongoose.Schema;
 
-const moodSchema = new Schema({
+const MoodSchema = new Schema({
   title: String,
   description: String,
   image: String,
   posts: [Post.schema],
 });
 
-const Mood = mongoose.model("Mood", moodSchema);
+const Mood = mongoose.model("Mood", MoodSchema);
 module.exports = Mood;

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const Post = require("./post");
+const Post = require("./Post");
 // mongoose.set("useCreateIndex", true);
 // const ObjectId = mongoose.Types.ObjectId;
 
