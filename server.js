@@ -9,7 +9,7 @@ const expressValidator = require("express-validator");
 const passport = require("passport-local");
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
 // ---------------------  DATABASE -------------------------- //
 const db = require("./models");
