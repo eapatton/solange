@@ -66,6 +66,6 @@ app.use("/", routes.views);
 app.use("/api/v1", routes.api);
 
 // ---------------------- START SERVER  ------------------------------- //
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`HTTP server listening at http://localhost:${PORT}`);
 });
