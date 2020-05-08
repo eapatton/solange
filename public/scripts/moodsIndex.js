@@ -1,4 +1,4 @@
-const API_BASE = "/api/v1";
+// const API_BASE = "/api/v1";
 const moods = document.getElementById("moods");
 
 // get all moods
