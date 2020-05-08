@@ -8,6 +8,12 @@
   max-height: 600px;
 }
 
+.h1-profile-title {
+  color: #c3907b;
+  font-family: "Rock Salt", cursive;
+  position: relative;
+}
+
 .modal-content {
   background-color: #bd8c7d;
 }
@@ -26,7 +32,8 @@
 }
 
 .card-title {
-  font-weight: bolder;
+  color: #c3907b;
+  font-family: "Rock Salt", cursive;
 }
 
 .card-img-top {
