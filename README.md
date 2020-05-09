@@ -66,7 +66,7 @@ The final objective is to build an app where users can pick a Beyonce mood and m
 
 ## Wireframes
 
-### Landing
+### Landing Page
 
 Users will have access to the navbar and home page
 
@@ -76,7 +76,7 @@ Users will have access to the navbar and home page
 
 Users can click on a specific mood
 
-### Problem Profile
+### Moods Info Page
 
 In the mood show page the user will find posts by other users correlated to the mood
 
@@ -88,38 +88,38 @@ In the mood show page the user can add a new post
 
 A more detailed list of solution cards
 
-### Solution Card Profile
+### Profile
 
-A detailed description of a specific solution
+A profile page for authenticated users
 
-### Create Account
+### Create/Login Account
 
-The page to register an account for the site
-
-### Login
-
-The login modal
+A modal to login/register an account for the site
 
 ## Data Models
 
-- MoodSchema - Title: String, - Description: String, - Image: String,
-
+- MoodSchema 
+  - Title: String, 
+  - Description: String, 
+  - Image: String,
   - Posts: [Posts.Schema],
 
-- PostsSchema - Username: String, - Description: String, - Image: String, - Link: String,
+- PostsSchema 
+  - Title: String,
+  - Description: String,
+  - Image: String,
+  - Link: String,
 
 - _Stretch Goal_
 
-  - User Schema
-    - Name:
-      - Type: String,
-      - Required: true,
-    - Email:
-      - Type: String,
-        - Required: true,
-    - Password:
-      - Type: String,
-      - Required: true,
+- User Schema
+   - Username:
+     - Type: String,
+     - Required: true,
+  - Password:
+    - Type: String,
+    - Required: true,
+   - Posts: [Posts.Schema]  
 
 - One to many, embedded data
 
@@ -134,32 +134,61 @@ The login modal
 - User story
 - Approval
 
-#### Sprint 2 -May 1 - 5
+#### Sprint 2 -May 1 - 3
 
 - File structures
   - MVC- Models, Views, Controllers
+- Models- write out Schemas
+- Embedded posts in the Mood schema
 - Boilerplates for core files
 - Get server running
-- Route planning blueprint
 - Connect the files together
 - Database setup
+- Seed Data
+
+#### Sprint 3 - May 4 - 6
+
+- EJS vs. handlebars for front end templates
+- Route planning blueprint
+- Connect the files together
+- CRUD functionality
+
+### Sprint 4 - May 7 - 9
+
 - Deploy to Heroku
-
-#### Sprint 3 - May 6 - 8
-
 - Authentication
 - Login
 - Profile
 - Bootstrap
 - Styling
 
+### Sprint 5 - STRETCH
+
+- Comment and like posts
+- Music on the site
+
 ## References
 
 - MDN https://developer.mozilla.org/en-US/
+  - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/Adding_z-index
 - getbootstrap.com
 - Heroku
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
 - https://gist.github.com/uupaa/f77d2bcf4dc7a294d109
+
+- coolors.co 
+- Google Fonts
+- https://www.jqueryscript.net/demo/Fullscreen-Hamburger-Menu-Plugin-jQuery-Overlay-Menu/
+- https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/
+
+
+## Beyonce Links
+- https://www.theodysseyonline.com/best-beyonce-lyrics
+- https://www.beyonce.com/album/lemonade-visual-album/lyrics/
+- https://www.goalcast.com/2017/06/27/top-18-most-empowering-beyonce-quotes-2/
+- https://iam.beyonce.com/
+
+
 
 ---
 
