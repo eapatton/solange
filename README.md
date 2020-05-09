@@ -1,4 +1,4 @@
-# Beyonce 
+# Beyoncé 
 # Mooodz
 
 ## Index:
@@ -84,9 +84,9 @@ In the mood show page the user will find posts by other users correlated to the 
 
 In the mood show page the user can add a new post
 
-### Solution Show
+### Edit Post
 
-A more detailed list of solution cards
+In the mood show page the user can edit their post
 
 ### Profile
 
@@ -153,7 +153,7 @@ A modal to login/register an account for the site
 - Connect the files together
 - CRUD functionality
 
-### Sprint 4 - May 7 - 9
+#### Sprint 4 - May 7 - 9
 
 - Deploy to Heroku
 - Authentication
@@ -162,7 +162,7 @@ A modal to login/register an account for the site
 - Bootstrap
 - Styling
 
-### Sprint 5 - STRETCH
+#### Sprint 5 - STRETCH
 
 - Comment and like posts
 - Music on the site
@@ -182,7 +182,7 @@ A modal to login/register an account for the site
 - https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/
 
 
-## Beyonce Links
+## Beyoncé Links
 - https://www.theodysseyonline.com/best-beyonce-lyrics
 - https://www.beyonce.com/album/lemonade-visual-album/lyrics/
 - https://www.goalcast.com/2017/06/27/top-18-most-empowering-beyonce-quotes-2/
@@ -192,4 +192,4 @@ A modal to login/register an account for the site
 
 ---
 
-[back to the top](#Beyonce)
+[back to the top](#Beyoncé)
