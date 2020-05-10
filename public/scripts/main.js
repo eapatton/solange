@@ -16,7 +16,7 @@ function handleLoginSubmit(event) {
   };
 
   console.log(userData);
-
+  //same origin policy
   fetch(`${API_BASE}/login`, {
     method: "POST",
     headers: {

@@ -5,14 +5,14 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
-const expressValidator = require("express-validator");
-const passport = require("passport-local");
+const passport = require("passport");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // ---------------------  DATABASE -------------------------- //
 const db = require("./models");
+require("./config/passport");
 
 // --------------------- ROUTES ----------------------------- //
 const routes = require("./routes");
@@ -23,24 +23,34 @@ app.use(express.static(`${__dirname}/public`));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("tiny"));
-// app.use(expressValidator());
 app.use(cookieParser());
 
 app.use(
   session({
-    store: new MongoStore({
-      url: process.env.MONGODB_URI || "mongodb://localhost:27017/base",
-    }),
-    secret:
-      process.env.SESSION_SECRET ||
-      "Beyoncesolangejayzwhentheresabilliondollarsonanelevator",
+    secret: "Solange&Beyoncé!",
     resave: false,
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 24 * 7 * 2, // Two weeks
-    },
+    saveUninitialized: true,
   })
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// app.use(
+//   session({
+//     store: new MongoStore({
+//       url: process.env.MONGODB_URI || "mongodb://localhost:27017/base",
+//     }),
+//     secret:
+//       process.env.SESSION_SECRET ||
+//       "Beyoncesolangejayzwhentheresabilliondollarsonanelevator",
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: {
+//       maxAge: 1000 * 60 * 60 * 24 * 7 * 2, // Two weeks
+//     },
+//   })
+// );
 
 // passport.use(
 //   new LocalStrategy(function (username, password, done) {
