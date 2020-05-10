@@ -17,6 +17,7 @@ const userSchema = new Schema(
       required: true,
     },
     posts: [Post.schema],
+    googleId: String,
   },
   { timestamps: true }
 );

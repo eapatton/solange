@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	  <!-- STYLESHEETS -->
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/styles/main.css" />
+  
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">  
+    
+    <!-- VENDOR SCRIPTS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+    <!-- APPLICATION SCRIPTS -->
+    <script defer src="/scripts/main.js"></script>
+
+
+	<title>Solange</title>
+</head>
+<body>
+ <header>
+        <div class="navbar-header">
+            <div class="toggle-button" id="toggle">
+                <span class="bar top"></span>
+                <span class="bar middle"></span>
+                <span class="bar bottom"></span>
+            </div>
+        </div>
+        <nav class="overlay" id="overlay">
+  <ul>
+    <li><a href="/">home</a></li>
+    <li><a href="/moods">the mood</a></li>
+    <li><a href="/about">about me</a></li>
+    <a href="/auth/google">Sign In with Google</a>
+    <li><a data-toggle="modal" data-target="#loginModal">login</a></li>
+	  <li><a data-toggle="modal" data-target="#signUpModal">register</a></li>
+    <li><a href="/privacy">stay private</a></li> 
+</ul>
+</nav>
+</header>
+
+
+
+    <!-- Modal for sign up -->
+      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header p-3">
+            <h5 class="modal-title" id="signUpModalLabel">Register</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body p-3">
+            <form ction="/profile" method="post" id="signupForm">
+
+			  <div class="form-group">
+                <label for="username">Username</label>
+                <input type="username" class="form-control" id="username" aria-describedby="username" placeholder="Enter Username" name="username" required>
+                <small id="usernameS" class="form-text text-muted">Make that name as unique as you are </small>
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" aria-describedby="password" placeholder="Enter password" name="password">
+              </div>
+              <button type="submit" class="btn  float-right" id="signupButton">Register</button>
+            </form>
+          </div>
+          <div class="modal-footer p-3 text-muted">
+            Already registered? <a class="link btn" data-toggle="modal" data-target="#loginModal" id="switchToLogin"><u>go to login</u></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+		<!-- Modal for login -->
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header p-3">
+						<h5 class="modal-title" id="loginModalLabel">Log in</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body p-3">
+						<form action="/login" method="post" id="loginForm">
+							<div class="form-group">
+							  <label for="username">Username</label>
+							  <input type="username" class="form-control" id="usernameLogin" aria-describedby="username" placeholder="Enter username" name="username">
+							  <small id="usernameSmall" class="form-text text-muted">Make that name as unique as you are </small>
+							</div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="passwordLogin" aria-describedby="password" placeholder="Enter password" name="password">
+              </div>
+							<button type="submit" class="btn btn-light float-right" id="loginButton">Login</button>
+						</form>
+					</div>
+					<div class="modal-footer p-3 text-muted">
+						Or create a <a class="link btn" data-toggle="modal" data-target="#signUpModal" id="switchToSignUp"><u>new account</u></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+<div class="container p-lg-5">
+  <div class="row">
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+     <h1 class="h1-privacy"> Privacy Please</h1>
+    </div>
+    <div class="col-sm">
+     <p style="color: #c3907b">Google Analytics Terms of Service
+These Google Analytics Terms of Service (this "Agreement") are entered into by Google LLC ("Google") and the entity executing this Agreement ("You"). This Agreement governs Your use of the standard Google Analytics (the "Service"). BY CLICKING THE "I ACCEPT" BUTTON, COMPLETING THE REGISTRATION PROCESS, OR USING THE SERVICE, YOU ACKNOWLEDGE THAT YOU HAVE REVIEWED AND ACCEPT THIS AGREEMENT AND ARE AUTHORIZED TO ACT ON BEHALF OF, AND BIND TO THIS AGREEMENT, THE OWNER OF THIS ACCOUNT. In consideration of the foregoing, the parties agree as follows:
+
+1. Definitions.
+"Account" refers to the account for the Service. All Profiles (as applicable) linked to a single Property will have their Hits aggregated before determining the charge for the Service for that Property.
+
+"Confidential Information" includes any proprietary data and any other information disclosed by one party to the other in writing and marked "confidential" or disclosed orally and, within five business days, reduced to writing and marked "confidential". However, Confidential Information will not include any information that is or becomes known to the general public, which is already in the receiving party's possession prior to disclosure by a party or which is independently developed by the receiving party without the use of Confidential Information.
+
+"Customer Data" or "Google Analytics Data" means the data you collect, process or store using the Service concerning the characteristics and activities of Users.
+
+"Documentation" means any accompanying documentation made available to You by Google for use with the Processing Software, including any documentation available online.
+
+"GAMC" means the Google Analytics Measurement Code, which is installed on a Property for the purpose of collecting Customer Data, together with any fixes, updates and upgrades provided to You.
+
+"Hit" means a collection of interactions that results in data being sent to the Service and processed. Examples of Hits may include page view hits and ecommerce hits. A Hit can be a call to the Service by various libraries, but does not have to be so (e.g., a Hit can be delivered to the Service by other Google Analytics-supported protocols and mechanisms made available by the Service to You).
+
+"Platform Home" means the user interface through which You can access certain Google Marketing Platform-level functionality.
+
+"Processing Software" means the Google Analytics server-side software and any upgrades, which analyzes the Customer Data and generates the Reports.
+
+"Profile" means the collection of settings that together determine the information to be included in, or excluded from, a particular Report. For example, a Profile could be established to view a small portion of a web site as a unique Report.
+
+"Property" means any web page, application, other property or resource under Your control that sends data to Google Analytics.
+
+"Privacy Policy" means the privacy policy on a Property.
+
+"Report" means the resulting analysis shown at www.google.com/analytics/, some of which may include analysis for a Profile.
+
+"Servers" means the servers controlled by Google (or its wholly-owned subsidiaries) on which the Processing Software and Customer Data are stored.
+
+“SDKs” mean certain software development kits, which may be used or incorporated into a Property app for the purpose of collecting Customer Data, together with any fixes, updates, and upgrades provided to You.
+
+"Software" means the Processing Software, GAMC and/or SDKs.
+
+"Third Party" means any third party (i) to which You provide access to Your Account or (ii) for which You use the Service to collect information on the third party's behalf.
+
+"Users" means users and/or visitors to Your Properties.
+
+The words "include" and "including" mean "including but not limited to."
+
+2. Fees and Service.
+Subject to Section 15, the Service is provided without charge to You for up to 10 million Hits per month per Account. Google may change its fees and payment policies for the Service from time to time including the addition of costs for geographic data, the importing of cost data from search engines, or other fees charged to Google or its wholly-owned subsidiaries by third party vendors for the inclusion of data in the Service reports. The changes to the fees or payment policies are effective upon Your acceptance of those changes which will be posted at www.google.com/analytics/. Unless otherwise stated, all fees are quoted in U.S. Dollars. Any outstanding balance becomes immediately due and payable upon termination of this Agreement and any collection expenses (including attorneys' fees) incurred by Google will be included in the amount owed, and may be charged to the credit card or other billing mechanism associated with Your AdWords account.
+
+3. Member Account, Password, and Security.
+To register for the Service, You must complete the registration process by providing Google with current, complete and accurate information as prompted by the registration form, including Your e-mail address (username) and password. You will protect Your passwords and take full responsibility for Your own, and third party, use of Your accounts. You are solely responsible for any and all activities that occur under Your Account. You will notify Google immediately upon learning of any unauthorized use of Your Account or any other breach of security. Google's (or its wholly-owned subsidiaries) support staff may, from time to time, log in to the Service under Your customer password in order to maintain or improve service, including to provide You assistance with technical or billing issues.
+
+4. Nonexclusive License.
+Subject to the terms and conditions of this Agreement, (a) Google grants You a limited, revocable, non-exclusive, non-sublicensable license to install, copy and use the GAMC and/or SDKs solely as necessary for You to use the Service on Your Properties or Third Party's Properties; and (b) You may remotely access, view and download Your Reports stored at www.google.com/analytics/. You will not (and You will not allow any third party to) (i) copy, modify, adapt, translate or otherwise create derivative works of the Software or the Documentation; (ii) reverse engineer, decompile, disassemble or otherwise attempt to discover the source code of the Software, except as expressly permitted by the law in effect in the jurisdiction in which You are located; (iii) rent, lease, sell, assign or otherwise transfer rights in or to the Software, the Documentation or the Service; (iv) remove any proprietary notices or labels on the Software or placed by the Service; (v) use, post, transmit or introduce any device, software or routine which interferes or attempts to interfere with the operation of the Service or the Software; or (vi) use data labeled as belonging to a third party in the Service for purposes other than generating, viewing, and downloading Reports. You will comply with all applicable laws and regulations in Your use of and access to the Documentation, Software, Service and Reports.
+
+5. Confidentiality and Beta Features.
+Neither party will use or disclose the other party's Confidential Information without the other's prior written consent except for the purpose of performing its obligations under this Agreement or if required by law, regulation or court order; in which case, the party being compelled to disclose Confidential Information will give the other party as much notice as is reasonably practicable prior to disclosing the Confidential Information. Certain Service features are identified as "Alpha," "Beta," "Experiment," (either within the Service or elsewhere by Google) or as otherwise unsupported or confidential (collectively, "Beta Features"). You may not disclose any information from Beta Features or the terms or existence of any non-public Beta Features. Google will have no liability arising out of or related to any Beta Features.
+
+6. Information Rights and Publicity.
+Google and its wholly owned subsidiaries may retain and use, subject to the terms of its privacy policy (located at https://www.google.com/policies/privacy/), information collected in Your use of the Service. Google will not share Your Customer Data or any Third Party's Customer Data with any third parties unless Google (i) has Your consent for any Customer Data or any Third Party's consent for the Third Party's Customer Data; (ii) concludes that it is required by law or has a good faith belief that access, preservation or disclosure of Customer Data is reasonably necessary to protect the rights, property or safety of Google, its users or the public; or (iii) provides Customer Data in certain limited circumstances to third parties to carry out tasks on Google's behalf (e.g., billing or data storage) with strict restrictions that prevent the data from being used or shared except as directed by Google. When this is done, it is subject to agreements that oblige those parties to process Customer Data only on Google's instructions and in compliance with this Agreement and appropriate confidentiality and security measures.
+
+7. Privacy.
+You will not and will not assist or permit any third party to, pass information to Google that Google could use or recognize as personally identifiable information. You will have and abide by an appropriate Privacy Policy and will comply with all applicable laws, policies, and regulations relating to the collection of information from Users. You must post a Privacy Policy and that Privacy Policy must provide notice of Your use of cookies, identifiers for mobile devices (e.g., Android Advertising Identifier or Advertising Identifier for iOS) or similar technology used to collect data. You must disclose the use of Google Analytics, and how it collects and processes data. This can be done by displaying a prominent link to the site "How Google uses data when you use our partners' sites or apps", (located at www.google.com/policies/privacy/partners/, or any other URL Google may provide from time to time). You will use commercially reasonable efforts to ensure that a User is provided with clear and comprehensive information about, and consents to, the storing and accessing of cookies or other information on the User’s device where such activity occurs in connection with the Service and where providing such information and obtaining such consent is required by law.
+
+You must not circumvent any privacy features (e.g., an opt-out) that are part of the Service. You will comply with all applicable Google Analytics policies located at www.google.com/analytics/policies/ (or such other URL as Google may provide) as modified from time to time (the "Google Analytics Policies").
+
+You may participate in an integrated version of Google Analytics and certain Google advertising services ("Google Analytics Advertising Features"). If You use Google Analytics Advertising Features, You will adhere to the Google Analytics Advertising Features policy (available at support.google.com/analytics/bin/answer.py?hl=en&topic=2611283&answer=2700409). Your access to and use of any Google advertising service is subject to the applicable terms between You and Google regarding that service.
+
+If You use the Platform Home, Your use of the Platform Home is subject to the Platform Home Additional Terms (or as subsequently re-named) available at https://support.google.com/marketingplatform/answer/9047313 (or such other URL as Google may provide) as modified from time to time (the "Platform Home Terms").
+
+8. Indemnification.
+To the extent permitted by applicable law, You will indemnify, hold harmless and defend Google and its wholly-owned subsidiaries, at Your expense, from any and all third-party claims, actions, proceedings, and suits brought against Google or any of its officers, directors, employees, agents or affiliates, and all related liabilities, damages, settlements, penalties, fines, costs or expenses (including, reasonable attorneys' fees and other litigation expenses) incurred by Google or any of its officers, directors, employees, agents or affiliates, arising out of or relating to (i) Your breach of any term or condition of this Agreement, (ii) Your use of the Service, (iii) Your violations of applicable laws, rules or regulations in connection with the Service, (iv) any representations and warranties made by You concerning any aspect of the Service, the Software or Reports to any Third Party; (v) any claims made by or on behalf of any Third Party pertaining directly or indirectly to Your use of the Service, the Software or Reports; (vi) violations of Your obligations of privacy to any Third Party; and (vii) any claims with respect to acts or omissions of any Third Party in connection with the Service, the Software or Reports. Google will provide You with written notice of any claim, suit or action from which You must indemnify Google. You will cooperate as fully as reasonably required in the defense of any claim. Google reserves the right, at its own expense, to assume the exclusive defense and control of any matter subject to indemnification by You.
+
+9. Third Parties.
+If You use the Service on behalf of the Third Party or a Third Party otherwise uses the Service through Your Account, whether or not You are authorized by Google to do so, then You represent and warrant that (a) You are authorized to act on behalf of, and bind to this Agreement, the Third Party to all obligations that You have under this Agreement, (b) Google may share with the Third Party any Customer Data that is specific to the Third Party's Properties, and (c) You will not disclose Third Party's Customer Data to any other party without the Third Party's consent.
+
+10. DISCLAIMER OF WARRANTIES.
+TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, EXCEPT AS EXPRESSLY PROVIDED FOR IN THIS AGREEMENT, GOOGLE MAKES NO OTHER WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING WITHOUT LIMITATION WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR USE AND NONINFRINGEMENT.
+
+11. LIMITATION OF LIABILITY.
+TO THE EXTENT PERMITTED BY APPLICABLE LAW, GOOGLE WILL NOT BE LIABLE FOR YOUR LOST REVENUES OR INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, EVEN IF GOOGLE OR ITS SUBSIDIARIES AND AFFILIATES HAVE BEEN ADVISED OF, KNEW OR SHOULD HAVE KNOWN THAT SUCH DAMAGES WERE POSSIBLE AND EVEN IF DIRECT DAMAGES DO NOT SATISFY A REMEDY. GOOGLE'S (AND ITS WHOLLY OWNED SUBSIDIARIES’) TOTAL CUMULATIVE LIABILITY TO YOU OR ANY OTHER PARTY FOR ANY LOSS OR DAMAGES RESULTING FROM CLAIMS, DEMANDS, OR ACTIONS ARISING OUT OF OR RELATING TO THIS AGREEMENT WILL NOT EXCEED $500 (USD).
+
+12. Proprietary Rights Notice.
+The Service, which includes the Software and all Intellectual Property Rights therein are, and will remain, the property of Google (and its wholly owned subsidiaries). All rights in and to the Software not expressly granted to You in this Agreement are reserved and retained by Google and its licensors without restriction, including, Google's (and its wholly owned subsidiaries’) right to sole ownership of the Software and Documentation. Without limiting the generality of the foregoing, You agree not to (and not to allow any third party to): (a) sublicense, distribute, or use the Service or Software outside of the scope of the license granted in this Agreement; (b) copy, modify, adapt, translate, prepare derivative works from, reverse engineer, disassemble, or decompile the Software or otherwise attempt to discover any source code or trade secrets related to the Service; (c) rent, lease, sell, assign or otherwise transfer rights in or to the Software, Documentation or the Service; (d) use, post, transmit or introduce any device, software or routine which interferes or attempts to interfere with the operation of the Service or the Software; (e) use the trademarks, trade names, service marks, logos, domain names and other distinctive brand features or any copyright or other proprietary rights associated with the Service for any purpose without the express written consent of Google; (f) register, attempt to register, or assist anyone else to register any trademark, trade name, serve marks, logos, domain names and other distinctive brand features, copyright or other proprietary rights associated with Google (or its wholly owned subsidiaries) other than in the name of Google (or its wholly owned subsidiaries, as the case may be); (g) remove, obscure, or alter any notice of copyright, trademark, or other proprietary right appearing in or on any item included with the Service or Software; or (h) seek, in a proceeding filed during the term of this Agreement or for one year after such term, an injunction of any portion of the Service based on patent infringement.
+
+13. U.S. Government Rights.
+If the use of the Service is being acquired by or on behalf of the U.S. Government or by a U.S. Government prime contractor or subcontractor (at any tier), in accordance with 48 C.F.R. 227.7202-4 (for Department of Defense (DOD) acquisitions) and 48 C.F.R. 2.101 and 12.212 (for non-DOD acquisitions), the Government's rights in the Software, including its rights to use, modify, reproduce, release, perform, display or disclose the Software or Documentation, will be subject in all respects to the commercial license rights and restrictions provided in this Agreement.
+
+14. Term and Termination.
+Either party may terminate this Agreement at any time with notice. Upon any termination of this Agreement, Google will stop providing, and You will stop accessing the Service. Additionally, if Your Account and/or Properties are terminated, You will (i) delete all copies of the GAMC from all Properties and/or (ii) suspend any and all use of the SDKs within 3 business days of such termination. In the event of any termination (a) You will not be entitled to any refunds of any usage fees or any other fees, and (b) any outstanding balance for Service rendered through the date of termination will be immediately due and payable in full and (c) all of Your historical Report data will no longer be available to You.
+
+15. Modifications to Terms of Service and Other Policies.
+Google may modify these terms or any additional terms that apply to the Service to, for example, reflect changes to the law or changes to the Service. You should look at the terms regularly. Google will post notice of modifications to these terms at https://www.google.com/analytics/terms/, the Google Analytics Policies at www.google.com/analytics/policies/, or other policies referenced in these terms at the applicable URL for such policies. Changes will not apply retroactively and will become effective no sooner than 14 days after they are posted. If You do not agree to the modified terms for the Service, You should discontinue Your use Google Analytics. No amendment to or modification of this Agreement will be binding unless (i) in writing and signed by a duly authorized representative of Google, (ii) You accept updated terms online, or (iii) You continue to use the Service after Google has posted updates to the Agreement or to any policy governing the Service.
+
+16. Miscellaneous, Applicable Law and Venue.
+Google will be excused from performance in this Agreement to the extent that performance is prevented, delayed or obstructed by causes beyond its reasonable control. This Agreement (including any amendment agreed upon by the parties in writing) represents the complete agreement between You and Google concerning its subject matter, and supersedes all prior agreements and representations between the parties. If any provision of this Agreement is held to be unenforceable for any reason, such provision will be reformed to the extent necessary to make it enforceable to the maximum extent permissible so as to effect the intent of the parties, and the remainder of this Agreement will continue in full force and effect. This Agreement will be governed by and construed under the laws of the state of California without reference to its conflict of law principles. In the event of any conflicts between foreign law, rules, and regulations, and California law, rules, and regulations, California law, rules and regulations will prevail and govern. Each party agrees to submit to the exclusive and personal jurisdiction of the courts located in Santa Clara County, California. The United Nations Convention on Contracts for the International Sale of Goods and the Uniform Computer Information Transactions Act do not apply to this Agreement. The Software is controlled by U.S. Export Regulations, and it may be not be exported to or used by embargoed countries or individuals. Any notices to Google must be sent to: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA, with a copy to Legal Department, via first class or air mail or overnight courier, and are deemed given upon receipt. A waiver of any default is not a waiver of any subsequent default. You may not assign or otherwise transfer any of Your rights in this Agreement without Google's prior written consent, and any such attempt is void. The relationship between Google and You is not one of a legal partnership relationship, but is one of independent contractors. This Agreement will be binding upon and inure to the benefit of the respective successors and assigns of the parties hereto. The following sections of this Agreement will survive any termination thereof: 1, 4, 5, 6 (except the last two sentences), 7, 8, 9, 10, 11, 12, 14, 16, and 17.
+
+17. Google Analytics for Firebase.
+If You link a Property to Firebase (“Firebase Linkage”) as part of using the Service, the following terms, in addition to Sections 1-16 above, will also apply to You, and will also govern Your use of the Service, including with respect to Your use of Firebase Linkage. Other than as modified below, all other terms will stay the same and continue to apply. In the event of a conflict between this Section 17 and Sections 1-16 above, the terms in Section 17 will govern and control solely with respect to Your use of the Firebase Linkage.
+
+The following definition in Section 1 is modified as follows:
+"Hit" means a collection of interactions that results in data being sent to the Service and processed. Examples of Hits may include page view hits and ecommerce hits. A Hit can be a call to the Service by various libraries, but does not have to be so (e.g., a Hit can be delivered to the Service by other Google Analytics-supported protocols and mechanisms made available by the Service to You). For the sake of clarity, a Hit does not include certain events whose collection reflects interactions with certain Properties capable of supporting multiple data streams, and which may include screen views and custom events (the collection of events, an “Enhanced Packet”).
+The following sentence is added to the end of Section 7 as follows:
+If You link a Property to a Firebase project (“Firebase Linkage”) (i) certain data from Your Property, including Customer Data, may be made accessible within or to any other entity or personnel according to permissions set in Firebase and (ii) that Property may have certain Service settings modified by authorized personnel of Firebase (notwithstanding the settings You may have designated for that Property within the Service).
+Last Updated June 17, 2019 </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="footer">
+
+<div class="grid-container">
+  <div class="left-column">
+        <div class="footer-social">
+        <div id="social-networks"> 
+        <a class="Footer__IconLink-sc-1b62jcq-14 cOWKWE" href="https://twitter.com/beyonce?lang=en" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" size="30" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></a>
+        <a class="Footer__IconLink-sc-1b62jcq-14 cOWKWE" href="https://www.facebook.com/beyonce/" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" size="30" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg></a>
+        <a class="Footer__IconLink-sc-1b62jcq-14 cOWKWE" href="https://www.instagram.com/beyonce/?hl=en" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" size="30" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></a>
+        <a class="Footer__IconLink-sc-1b62jcq-14 cOWKWE" href="https://www.youtube.com/beyonce" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" size="30" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></a>
+        <a class="beyonceweb" href="https://beyonce.com/" target="_blank"> Beyonce.com</a>
+        
+        </div>
+        <a class="copyright" href="https://github.com/eapatton" target="_blank"> Made with adoration by Elizabeth</a>
+        </div>
+</div>
+
+    
+  </div>
+
+</div>
+
+
+
+	<!-- AJAX JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
+	
+	<script src="/scripts/overlay.js"></script>
+
+	<!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+</body>
+
+
+</html>

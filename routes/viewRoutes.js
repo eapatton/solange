@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const passport = require("passport");
 
 //Home page view
 router.get("/", (req, res) => {
@@ -12,6 +13,13 @@ router.get("/", (req, res) => {
 //TODO:about.html
 router.get("/about", (req, res) => {
   res.sendFile("views/about.html", {
+    root: __dirname + "/../",
+  });
+});
+
+// Privacy Policy
+router.get("/privacy", (req, res) => {
+  res.sendFile("views/privacy.html", {
     root: __dirname + "/../",
   });
 });
@@ -45,7 +53,30 @@ router.get("/moods/:moodId/posts/:postId", (req, res) => {
   });
 });
 
-//// ------------------ AUTH
+//// ------------------ GOOGLE AUTH
+
+// GET /auth/google
+
+router.get(
+  "/auth/google",
+  passport.authenticate("google", {
+    scope: [
+      "https://www.googleapis.com/auth/plus.login",
+      "https://www.googleapis.com/auth/plus.profile.emails.read",
+    ],
+  })
+);
+
+// GET /auth/google/callback
+router.get(
+  "/auth/google/callback",
+  passport.authenticate("google", { failureRedirect: "/login" }),
+  function (req, res) {
+    res.redirect("/profile");
+  }
+);
+
+/////////------------------------ AUTH
 
 //register page view
 router.get("/register", (req, res) => {
