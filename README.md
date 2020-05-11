@@ -190,6 +190,13 @@ A page about why I made this website
 - https://www.goalcast.com/2017/06/27/top-18-most-empowering-beyonce-quotes-2/
 - https://iam.beyonce.com/
 
----
+## Unsolved problems & future features
+
+- Authenticated Users
+- Login with a third party
+  - Google
+  - Facebook
+
+-----------------------
 
 [back to the top](#Beyoncé)
