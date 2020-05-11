@@ -202,7 +202,7 @@ A page about why I made this website
 - Navbar
   - Add a dropdown menu for the specific moods
 - Mood Page have the specific mood title
-- WHen adding a post I want the link to be clickable
+- When adding a post I want the link to be clickable
 
 ### Special Thanks
 To my ever helpful instructors, Brock and Michael.
