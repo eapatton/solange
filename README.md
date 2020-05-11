@@ -196,6 +196,9 @@ A page about why I made this website
 - Login with a third party
   - Google
   - Facebook
+- Navbar
+  - Add a dropdown menu for the specific moods
+- Mood Page have the specific mood title   
 
 -----------------------
 
