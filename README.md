@@ -21,8 +21,9 @@ The final objective is to build an app where users can pick a Beyonce mood and m
   - Mongoose,
   - Express,
   - Body-parser,
-  - Bcrypt
-  - Express-session
+  - Bcrypt,
+  - Express-session,
+  - Passport Google Auth
 - Bootstrap
 - HTML
 - CSS
