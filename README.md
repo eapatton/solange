@@ -201,7 +201,12 @@ A page about why I made this website
   - Facebook
 - Navbar
   - Add a dropdown menu for the specific moods
-- Mood Page have the specific mood title   
+- Mood Page have the specific mood title
+
+### Special Thanks
+To my ever helpful instructors, Brock and Michael.
+To all my classmates but particularly Monica for reminding me of my passion, Anya for leading me through authentication, and Seanny for helpful tips on styling. 
+
 
 -----------------------
 
