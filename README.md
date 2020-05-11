@@ -1,5 +1,4 @@
-# Beyoncé 
-# Mooodz
+# Beyoncé
 
 ## Index:
 
@@ -66,45 +65,46 @@ The final objective is to build an app where users can pick a Beyonce mood and m
 
 ## Wireframes
 
-### Landing Page
+### Landing Page & Moods Index
 
 Users will have access to the navbar and home page
-
-<!-- <img src="/public/images/home.png" width="200" height="200"> -->
-
-### Moods Index
-
 Users can click on a specific mood
 
-### Moods Info Page
+<img src="/public/images/wireframe/home.jpg" width="200" height="300">
+
+### Moods Info Page & Profile
 
 In the mood show page the user will find posts by other users correlated to the mood
+A profile page for authenticated users
 
-### Add Post
+<img src="/public/images/wireframe/posts.jpg" width="200" height="300">
+
+### Add Post & Edit a Post
 
 In the mood show page the user can add a new post
-
-### Edit Post
-
 In the mood show page the user can edit their post
-
-### Profile
-
-A profile page for authenticated users
 
 ### Create/Login Account
 
 A modal to login/register an account for the site
 
+### About Page
+
+A page about why I made this website
+
+<img src="/public/images/wireframe/about.jpg" width="200" height="200">
+
 ## Data Models
 
-- MoodSchema 
-  - Title: String, 
-  - Description: String, 
+- MoodSchema
+
+  - Title: String,
+  - Description: String,
   - Image: String,
   - Posts: [Posts.Schema],
 
-- PostsSchema 
+- PostsSchema
+
   - Title: String,
   - Description: String,
   - Image: String,
@@ -113,13 +113,14 @@ A modal to login/register an account for the site
 - _Stretch Goal_
 
 - User Schema
-   - Username:
-     - Type: String,
-     - Required: true,
+
+  - Username:
+    - Type: String,
+    - Required: true,
   - Password:
     - Type: String,
     - Required: true,
-   - Posts: [Posts.Schema]  
+  - Posts: [Posts.Schema]
 
 - One to many, embedded data
 
@@ -175,20 +176,19 @@ A modal to login/register an account for the site
 - Heroku
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
 - https://gist.github.com/uupaa/f77d2bcf4dc7a294d109
+- https://git.generalassemb.ly/SF-SEI-9/Node-Heroku-Deployment
 
-- coolors.co 
+- coolors.co
 - Google Fonts
 - https://www.jqueryscript.net/demo/Fullscreen-Hamburger-Menu-Plugin-jQuery-Overlay-Menu/
 - https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/
 
-
 ## Beyoncé Links
+
 - https://www.theodysseyonline.com/best-beyonce-lyrics
 - https://www.beyonce.com/album/lemonade-visual-album/lyrics/
 - https://www.goalcast.com/2017/06/27/top-18-most-empowering-beyonce-quotes-2/
 - https://iam.beyonce.com/
-
-
 
 ---
 
